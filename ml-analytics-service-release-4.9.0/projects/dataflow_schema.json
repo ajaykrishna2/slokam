@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "evidences": {
+      "type": "object",
+      "properties": {
+        "OB": {
+          "type": "object",
+          "properties": {
+            "externalId": {
+              "type": "string"
+            },
+            "tip": {
+              "type": "null"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "modeOfCollection": {
+              "type": "string"
+            },
+            "canBeNotApplicable": {
+              "type": "boolean"
+            },
+            "notApplicable": {
+              "type": "null"
+            },
+            "canBeNotAllowed": {
+              "type": "boolean"
+            },
+            "remarks": {
+              "type": "null"
+            },
+            "startTime": {
+              "type": "number"
+            },
+            "endTime": {
+              "type": "number"
+            },
+            "isSubmitted": {
+              "type": "boolean"
+            },
+            "submissions": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "externalId": {
+                      "type": "string"
+                    },
+                    "answers": {
+                      "type": "object",
+                      "properties": {
+                        "600b21c57ea68a7ed9278869": {
+                          "type": "object",
+                          "properties": {
+                            "qid": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "remarks": {
+                              "type": "string"
+                            },
+                            "fileName": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "gpsLocation": {
+                              "type": "string"
+                            },
+                            "payload": {
+                              "type": "object",
+                              "properties": {
+                                "question": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "question"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "qid",
+                            "value",
+                            "remarks",
+                            "fileName",
+                            "gpsLocation",
+                            "payload"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "600b21c57ea68a7ed9278869"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "externalId",
+                    "answers"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "externalId",
+            "tip",
+            "name",
+            "description",
+            "modeOfCollection",
+            "canBeNotApplicable",
+            "notApplicable",
+            "canBeNotAllowed",
+            "remarks",
+            "startTime",
+            "endTime",
+            "isSubmitted",
+            "submissions"
+          ]
+        }
+      },
+      "required": [
+        "OB"
+      ]
+    }
+  },
+  "required": [
+    "evidences"
+  ]
+}
