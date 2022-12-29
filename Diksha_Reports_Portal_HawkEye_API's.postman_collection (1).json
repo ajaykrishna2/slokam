@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "dcd35d50-80f8-4faf-b6f8-7b406c6532bd",
+		"name": "Diksha_Reports_Portal_HawkEye_API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list reports",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{he_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"request\": {\n\t\t\"filters\": {\n\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/data/v1/report-service/report/list",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report-service",
+						"report",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch report by id",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{he_api_key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-authenticated-user-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImFjY2Vzc3YxX2tleTYifQ.eyJhdWQiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwic3ViIjoiZjo5Nzk3MzhiNy0yNTNjLTRhZGYtOTY3My1hODU3ZWViODYxMTU6ZmNhMjkyNWYtMWVlZS00NjU0LTkxNzctZmVjZTNmZDZhZmM5Iiwicm9sZXMiOlt7InJvbGUiOiJCT09LX0NSRUFUT1IiLCJzY29wZSI6W3sib3JnYW5pc2F0aW9uSWQiOiIwMTI2OTg3ODc5NzUwMzY5MjgxMCJ9XX0seyJyb2xlIjoiQ09OVEVOVF9DUkVBVE9SIiwic2NvcGUiOlt7Im9yZ2FuaXNhdGlvbklkIjoiMDEyNjk4Nzg3OTc1MDM2OTI4MTAifV19LHsicm9sZSI6IkNPVVJTRV9NRU5UT1IiLCJzY29wZSI6W3sib3JnYW5pc2F0aW9uSWQiOiIwMTI2OTg3ODc5NzUwMzY5MjgxMCJ9XX0seyJyb2xlIjoiUFJPR1JBTV9ERVNJR05FUiIsInNjb3BlIjpbeyJvcmdhbmlzYXRpb25JZCI6IjAxMzAxMDc2MjE4MDUwMTUwNjgifSx7Im9yZ2FuaXNhdGlvbklkIjoiMDEyNjk4Nzg3OTc1MDM2OTI4MTAifV19LHsicm9sZSI6IlJFUE9SVF9BRE1JTiIsInNjb3BlIjpbeyJvcmdhbmlzYXRpb25JZCI6IjAxMjY5ODc4Nzk3NTAzNjkyODEwIn1dfSx7InJvbGUiOiJQVUJMSUMiLCJzY29wZSI6W119XSwiaXNzIjoiaHR0cHM6Ly9zdGFnaW5nLnN1bmJpcmRlZC5vcmcvYXV0aC9yZWFsbXMvc3VuYmlyZCIsIm5hbWUiOiJHdWVzdCBuYW1lIGNoYW5nZWQiLCJ0eXAiOiJCZWFyZXIiLCJleHAiOjE2NTI1MzAyNDgsImlhdCI6MTY1MjQ0Mzg3N30.AR-8D_M1phPZu3x2DWrwsrkT0PSxbQATnnDq1ioF8F54yBdU4mrXzdV5Z0YbfLlkLgoHst1J1Gd00JtdReHJurRCyeOmz--WYpAjQUFuD1nb0TMVfRIQTuHEMyepTteyy6ou2gT8qU6Jpyuqb-hJlPHlxbqhnWICDoNX2LZmGBucmzl96j_TPfQEPBikulJ3Lvu4nc0oXFxaQUn-9O8p2gkcMkHaSvhq1M297JSJKVQK_X-0Ti7Cn2pnuEXXf8DSyykZsqb58qdCA69K5Rvc2NdhUqwszlTcNc8xinvLkwmn-kr3zh4pOljKJjIHwRFWnYgd-pHrJhKHy2xVdquzzg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/data/v1/report-service/report/get/2ef7a7f0-9bc8-4e7e-9f33-781d06f5fb2c",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report-service",
+						"report",
+						"get",
+						"2ef7a7f0-9bc8-4e7e-9f33-781d06f5fb2c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retire report by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{he_api_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/data/v1/report-service/report/retire/97595c01-4c34-420d-a412-844bf40c3a36",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report-service",
+						"report",
+						"retire",
+						"97595c01-4c34-420d-a412-844bf40c3a36"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{he_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"request\": {\n        \"report\": {\n            \"title\": \"Consumption Summary Dataset By Content Channel\",\n            \"description\": \"Exhaust of the summary dataset that is sliced by the content created channel. This dataset is generated daily\",\n            \"authorizedroles\": [\n                \"REPORT_ADMIN\"\n            ],\n            \"status\": \"draft\",\n            \"type\": \"public\",\n            \"report_type\": \"dataset\",\n            \"createdby\": \"122e066f-c9f3-4812-92de-c5ef72a8c07e\",\n            \"reportconfig\": {\n                \"dataset\": {\n                    \"type\": \"scheduled\",\n                    \"examples\": \"IyBEYXRhc2V0IEV4YW1wbGVzIE1hcmtkb3du\",\n                    \"datasetId\": \"summary-channel-exhaust\",\n                    \"granularity\": \"daily\",\n                    \"dataDictionary\": \"IyBEYXRhIERpY3Rpb25hcnk=\",\n                    \"downloadFormats\": [\n                        \"csv\"\n                    ],\n                    \"dataAvailableFrom\": \"2020-09-03\"\n                },\n                \"description\": \"Exhaust of the summary dataset that is sliced by the content created channel. This dataset is generated daily\"\n            },\n            \"slug\": \"sunbird\",\n            \"parameters\": [\"$channel\"],\n            \"reportgenerateddate\": \"2020-09-04\",\n             \"reportduration\": {\n                \"enddate\": \"2020-01-01\",\n                \"startdate\": \"2021-01-01\"\n            },\n            \"tags\": [\n                \"Consumption\",\n                \"ContentCreator\"\n            ],\n            \"updatefrequency\": \"DAILY\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/data/v1/report-service/report/create",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report-service",
+						"report",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete report",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5YzNkYzdlOWFiZWM0NzcxOThlNGU5YjY5ZDI2M2Y0MCJ9.ny7MzARglZBrDF5IDcE7CslRfFiYuwEQGnuUfIii8eE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/data/v1/report-service/report/delete/e94d4338-a319-4030-b1ac-b57c51e1157a",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report-service",
+						"report",
+						"delete",
+						"e94d4338-a319-4030-b1ac-b57c51e1157a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update report by id ",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{he_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"request\": {\n    \"report\": {\n                \"reportid\": \"e6762887-c2d1-4b5e-96c7-35812f2a8ef7\",\n                \"title\": \"Diksha page views (Last 30 days)\",\n                \"description\": \"This report displays the total number of page views on DIKSHA\",\n                \"authorizedroles\": [\n                    \"ORG_ADMIN\",\n                    \"REPORT_VIEWER\"\n                ],\n                \"status\": \"draft\",\n                \"type\": \"public\",\n                \"reportaccessurl\": \"\\\"https://diksha.gov.in\\\"/dashBoard/reports/e6762887-c2d1-4b5e-96c7-35812f2a8ef7\",\n                \"createdon\": \"2020-05-28T17:13:19.068Z\",\n                \"updatedon\": \"2020-05-28T17:29:20.000Z\",\n                \"createdby\": \"kumar\",\n                \"reportconfig\": {\n                    \"label\": \"Diksha page views (Last 30 days)\",\n                    \"title\": \"Diksha page views (Last 30 days)\",\n                    \"charts\": [\n                        {\n                            \"id\": \"State_wise_page_views__1\",\n                            \"colors\": [\n                                {\n                                    \"borderColor\": \"rgb(0, 199, 134)\",\n                                    \"borderWidth\": 2,\n                                    \"backgroundColor\": \"rgba(0, 199, 134, 0.2)\"\n                                },\n                                {\n                                    \"borderColor\": \"rgb(255, 161, 29)\",\n                                    \"borderWidth\": 2,\n                                    \"backgroundColor\": \"rgba(255, 161, 29, 0.2)\"\n                                },\n                                {\n                                    \"borderColor\": \"rgb(255, 69, 88)\",\n                                    \"borderWidth\": 2,\n                                    \"backgroundColor\": \"rgba(255, 69, 88, 0.2)\"\n                                },\n                                {\n                                    \"borderColor\": \"rgb(242, 203, 28)\",\n                                    \"borderWidth\": 2,\n                                    \"backgroundColor\": \"rgba(242, 203, 28, 0.2)\"\n                                },\n                                {\n                                    \"borderColor\": \"rgb(55, 70, 73)\",\n                                    \"borderWidth\": 2,\n                                    \"backgroundColor\": \"rgba(55, 70, 73, 0.2)\"\n                                }\n                            ],\n                            \"options\": {\n                                \"title\": {\n                                    \"text\": \"State wise page views \",\n                                    \"display\": true,\n                                    \"fontSize\": 16\n                                },\n                                \"legend\": {\n                                    \"display\": false\n                                },\n                                \"scales\": {\n                                    \"xAxes\": [\n                                        {\n                                            \"ticks\": {\n                                                \"autoSkip\": false\n                                            },\n                                            \"scaleLabel\": {\n                                                \"display\": true,\n                                                \"labelString\": \"state\"\n                                            }\n                                        }\n                                    ],\n                                    \"yAxes\": [\n                                        {\n                                            \"scaleLabel\": {\n                                                \"display\": true,\n                                                \"labelString\": \"Page Hits\"\n                                            }\n                                        }\n                                    ]\n                                },\n                                \"tooltips\": {\n                                    \"mode\": \"x-axis\",\n                                    \"intersect\": false,\n                                    \"bodySpacing\": 5,\n                                    \"titleSpacing\": 5\n                                },\n                                \"responsive\": true,\n                                \"showLastUpdatedOn\": true\n                            },\n                            \"datasets\": [\n                                {\n                                    \"label\": \"Total Page Hits\",\n                                    \"dataExpr\": \"Total Page Hits\"\n                                }\n                            ],\n                            \"chartType\": \"bar\",\n                            \"dataSource\": {\n                                \"ids\": [\n                                    \"State_wise_page_views__1\"\n                                ],\n                                \"commonDimension\": \"state\"\n                            },\n                            \"labelsExpr\": \"state\"\n                        }\n                    ],\n                    \"dataSource\": [\n                        {\n                            \"id\": \"State_wise_page_views__1\",\n                            \"path\": \"/reports/fetch/hawk-eye/State_wise_page_views__1.json\"\n                        },\n                        {\n                            \"id\": \"State_wise_page_views__1\",\n                            \"path\": \"/reports/fetch/hawk-eye/State_wise_page_views__1.json\"\n                        }\n                    ],\n                    \"description\": \"This report displays the total number of page views on DIKSHA\"\n                },\n                \"templateurl\": null,\n                \"slug\": \"hawk-eye\",\n                \"reportgenerateddate\": \"2020-12-02T00:00:00.000Z\",\n                \"reportduration\": {\n                    \"enddate\": \"12-02-2020\",\n                    \"startdate\": \"12-02-2020\"\n                },\n                \"tags\": [\n                    \"1Bn\"\n                ],\n                \"updatefrequency\": \"DAILY\"\n            }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/data/v1/report-service/report/update/e6762887-c2d1-4b5e-96c7-35812f2a8ef7",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report-service",
+						"report",
+						"update",
+						"e6762887-c2d1-4b5e-96c7-35812f2a8ef7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshToken",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true,
+					"content-length": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Tncontentcreator@yopmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "project-sunbird-stage-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "74dae6b6-5462-4353-90c6-67940a91e96c",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}auth/realms/sunbird/protocol/openid-connect/token",
+					"host": [
+						"{{host}}auth"
+					],
+					"path": [
+						"realms",
+						"sunbird",
+						"protocol",
+						"openid-connect",
+						"token"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserAccessToken",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true,
+					"content-length": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0QnAzbnhlbjlRSXBJeXBWMEZqQ1lqRE1JZlBlMkM1WiJ9.7myxDpFcnP75faWUmIJ-QzwnaOeCWEtd0lvs4x5AJh4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1YTNmYzc2OC1kMWMzLTQxMWQtYWMzNy01Zjk0Y2Y0ZjE5MDAifQ.eyJqdGkiOiIyOTlmMmRkYi0wMzk4LTQ2NjctYjgxNC0yMDUzZDVhNTU2YjEiLCJleHAiOjE2NTI1MzAyNDgsIm5iZiI6MCwiaWF0IjoxNjUyNDQzODQ4LCJpc3MiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwiYXVkIjoiaHR0cHM6Ly9zdGFnaW5nLnN1bmJpcmRlZC5vcmcvYXV0aC9yZWFsbXMvc3VuYmlyZCIsInN1YiI6ImY6OTc5NzM4YjctMjUzYy00YWRmLTk2NzMtYTg1N2VlYjg2MTE1OmZjYTI5MjVmLTFlZWUtNDY1NC05MTc3LWZlY2UzZmQ2YWZjOSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJwcm9qZWN0LXN1bmJpcmQtc3RhZ2UtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiY2ExMDViM2ItYzE1Yi00YWE2LWIzNjAtODFhMTU3M2QxNjY3IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6IiJ9.g9jOjbLN4aH6-57z4RvvznWpCsRDq_wTh3PHWacnHXI",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJHUnh4OHVyNDNwWEgzX1FNekJXZXJRUFdyWDAyUEprSzlDemwzaGM2MGZBIn0.eyJqdGkiOiJlZTNlYWU2MS1iYjIzLTRiMDUtYmNjZC00ZTFiOWJmMWYzM2EiLCJleHAiOjE2NTI0MzM2OTAsIm5iZiI6MCwiaWF0IjoxNjUyMzQ3MjkwLCJpc3MiOiJodHRwczovL3N0YWdpbmcuc3VuYmlyZGVkLm9yZy9hdXRoL3JlYWxtcy9zdW5iaXJkIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImY6OTc5NzM4YjctMjUzYy00YWRmLTk2NzMtYTg1N2VlYjg2MTE1OmZjYTI5MjVmLTFlZWUtNDY1NC05MTc3LWZlY2UzZmQ2YWZjOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InByb2plY3Qtc3VuYmlyZC1zdGFnZS1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI4OWJlMWU2Zi01M2QwLTRkYjUtOTQ1Yy05NmNmMmRlYzE4MmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vc3RhZ2luZy5zdW5iaXJkZWQub3JnLyJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiIiwibmFtZSI6IkNvbnRlbnQgQ3JlYXRvciBUYW1pbG5kYXUiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjY3RuMTM1MCIsImdpdmVuX25hbWUiOiJDb250ZW50IENyZWF0b3IgVGFtaWxuZGF1IiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6InRuKioqKioqKioqKioqKipAeW9wbWFpbC5jb20ifQ.FGfOYkuxNXnsuO_Ew_Y5c4So5nIhGtCN3b_97Gt2hxJesB3ZykwBpZewlX4Wpuif2iG9Jj5xrdBuRJPgaBEox-h1_yDiOSQCEMdvEMCoTJsnEh7ctaA3_hVcuYJwIyVlTYMTpLW_4XrTdM8FG4lQ2czBBLh7qFHLUTULTJhOhZSGtvxyf338hR_5Y78xtK7OICAgUZ_oAl-Z4EFbwEzcC2RLypvJytRauLAk5VGjzMAM-Pdq49nUZB0ZNVQWSv5ovyDHcOZJu9cgF952DILGxke_u_1Srl-Hgupgg_f02lXjhE7XO5j8VEKo-k72K7jZgkTgBY6y7uXF7F0iUVn7UA",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/auth/v1/refresh/token",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"v1",
+						"refresh",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "bbdcd415-0378-40ee-8f8a-592f82d225d1",
+		"name": "Diksha_Reports_Analytics_Job_HawkEye_API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SubmitRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJQbEhoYXhnNFR5bEU0cW53WUp0dUs5TUxOYjBhSHFERSJ9.ZIk-J6IrTaEBSRVHhH6u0rRSkB1DXZK3LHLlmVHguUY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"ekstep.analytics.report.request.submit\",\n    \"ver\": \"1.0\",\n    \"ts\": \"2020-03-30T12:40:40+05:30\",\n    \"params\": {\n        \"msgid\": \"4f04da60-1e24-4d31-aa7b-1daf91c46341\"\n    },\n   \"request\": {\n  \"createdOn\": 1594729469373,\n  \"updatedOn\": 1595417119598,\n  \"reportId\": \"Quiz_Completion\",\n  \"config\": {\n    \"reportConfig\": {\n      \"id\": \"Quiz_Completion\",\n      \"mergeConfig\": {\n        \"rollupRange\": 110,\n        \"rollupAge\": \"DAY\",\n        \"postContainer\": \"reports\",\n        \"container\": \"reports\",\n        \"basePath\": \"/mount/data/analytics/tmp\",\n        \"reportPath\": \"Quiz_Completion.csv\",\n        \"rollupCol\": \"Date||%d-%m-%Y\",\n        \"frequency\": \"DAILY\",\n        \"rollup\": 1\n      },\n      \"labels\": {\n        \"total_content_plays_on_app\": \"Hindi Completion\",\n        \"total_content_plays_on_desktop\": \"English Completion\",\n        \"legend\": \"Quiz Completion\",\n        \"date\": \"Date\",\n        \"total_content_plays_on_portal\": \"Total Completion\",\n        \"total_count\": \"total_content_plays_on_desktop\"\n      },\n      \"dateRange\": {\n        \"interval\": {\n          \"startDate\": \"2020-06-20\",\n          \"endDate\": \"2020-09-01\"\n        },\n        \"granularity\": \"day\"\n      },\n      \"metrics\": [\n        {\n          \"metric\": \"total_content_plays_on_portal\",\n          \"label\": \"total_content_plays_on_portal\",\n          \"druidQuery\": {\n            \"context\": {\n              \"skipEmptyBuckets\": true\n            },\n            \"dataSource\": \"telemetry-events-syncts\",\n            \"filters\": [\n              {\n                \"type\": \"equals\",\n                \"dimension\": \"edata_pageid\",\n                \"value\": \"ContentApp-EndScreen\"\n              },\n              {\n                \"type\": \"in\",\n                \"dimension\": \"object_id\",\n                \"values\": [\n                  \"do_3130465151662080001553\",\n                  \"do_3130464791478026241695\"\n                ]\n              }\n            ],\n            \"granularity\": \"day\",\n            \"aggregations\": [\n              {\n                \"name\": \"total_content_plays_on_portal\",\n                \"type\": \"count\",\n                \"fieldName\": \"count\"\n              }\n            ],\n            \"postAggregations\": [],\n            \"queryType\": \"timeseries\"\n          }\n        },\n        {\n          \"metric\": \"total_content_plays_on_app\",\n          \"label\": \"Hindi Completion\",\n          \"druidQuery\": {\n            \"context\": {\n              \"skipEmptyBuckets\": true\n            },\n            \"dataSource\": \"telemetry-events-syncts\",\n            \"filters\": [\n              {\n                \"type\": \"equals\",\n                \"dimension\": \"edata_pageid\",\n                \"value\": \"ContentApp-EndScreen\"\n              },\n              {\n                \"type\": \"equals\",\n                \"dimension\": \"object_id\",\n                \"value\": \"do_3130465151662080001553\"\n              }\n            ],\n            \"granularity\": \"day\",\n            \"aggregations\": [\n              {\n                \"name\": \"total_content_plays_on_app\",\n                \"type\": \"count\",\n                \"fieldName\": \"count\"\n              }\n            ],\n            \"postAggregations\": [],\n            \"queryType\": \"timeseries\"\n          }\n        },\n        {\n          \"metric\": \"total_content_plays_on_desktop\",\n          \"label\": \"English Completion\",\n          \"druidQuery\": {\n            \"context\": {\n              \"skipEmptyBuckets\": true\n            },\n            \"dataSource\": \"telemetry-events-syncts\",\n            \"filters\": [\n              {\n                \"type\": \"equals\",\n                \"dimension\": \"edata_pageid\",\n                \"value\": \"ContentApp-EndScreen\"\n              },\n              {\n                \"type\": \"equals\",\n                \"dimension\": \"object_id\",\n                \"value\": \"do_3130464791478026241695\"\n              }\n            ],\n            \"granularity\": \"day\",\n            \"aggregations\": [\n              {\n                \"name\": \"total_content_plays_on_desktop\",\n                \"type\": \"count\",\n                \"fieldName\": \"count\"\n              }\n            ],\n            \"postAggregations\": [],\n            \"queryType\": \"timeseries\"\n          }\n        }\n      ],\n      \"output\": [\n        {\n          \"type\": \"csv\",\n          \"metrics\": [\n            \"total_content_plays_on_portal\",\n            \"total_content_plays_on_app\",\n            \"total_content_plays_on_desktop\"\n          ],\n          \"dims\": [\n            \"date\"\n          ],\n          \"fileParameters\": [\n            \"id\",\n            \"dims\"\n          ]\n        }\n      ],\n      \"queryType\": \"timeseries\"\n    },\n    \"store\": \"azure\",\n    \"container\": \"reports\",\n    \"key\": \"hawk-eye/\"\n  },\n  \"createdBy\": \"User1\",\n  \"description\": \"Quiz Play, Completion, and Trends\",\n  \"submittedOn\": 1594729469373,\n  \"status\": \"ACTIVE\",\n  \"status_msg\": \"REPORT SUCCESSFULLY ACTIVATED\",\n  \"reportSchedule\": \"DAILY\"\n}\n}\n"
+				},
+				"url": {
+					"raw": "{{host}}/api/data/v1/report/jobs/submit",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report",
+						"jobs",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReportRequest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{analytics_api_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/data/v1/report/jobs/project_csv",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report",
+						"jobs",
+						"project_csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReportList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{analytics_api_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/data/v1/report/jobs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"data",
+						"v1",
+						"report",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeactivateReportAPI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJQbEhoYXhnNFR5bEU0cW53WUp0dUs5TUxOYjBhSHFERSJ9.ZIk-J6IrTaEBSRVHhH6u0rRSkB1DXZK3LHLlmVHguUY"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{analytics_api_host}}/report/jobs/deactivate/ml_no_of_improvements_district_wise",
+					"host": [
+						"{{analytics_api_host}}"
+					],
+					"path": [
+						"report",
+						"jobs",
+						"deactivate",
+						"ml_no_of_improvements_district_wise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAPI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{analytics_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"ekstep.analytics.report.request.update\",\n    \"ver\": \"1.0\",\n    \"ts\": \"2020-03-30T12:40:40+05:30\",\n    \"params\": {\n        \"msgid\": \"4f04da60-1e24-4d31-aa7b-1daf91c46341\"\n    },\n   \"request\": {\n        \"createdOn\": 1613994484935,\n        \"updatedOn\": 1614085261484,\n        \"reportId\": \"project_csv\",\n        \"config\":  {\n            \"reportConfig\": {\n                \"id\": \"project_csv\",\n                \"mergeConfig\": {\n                    \"postContainer\": \"reports\",\n                    \"container\": \"reports\",\n                    \"basePath\": \"/mount/data/analytics/tmp\",\n                    \"reportPath\": \"project_csv.csv\",\n                    \"rollup\": 0\n                },\n                \"labels\": {\n                    \"block_name\": \"Block\",\n                    \"project_title_editable\": \"Project Title\",\n                    \"task_evidence\": \"Task Evidence\",\n                    \"designation\": \"Role\",\n                    \"school_externalId\": \"School ID\",\n                    \"project_created_date\": \"Project start date of the user\",\n                    \"user_full_name\": \"User First Name\",\n                    \"project_last_sync\": \"Project Last Synced Date\",\n                    \"project_duration\": \"Project Duration\",\n                    \"legend\": \"project\",\n                    \"user_id\": \"User Name\",\n                    \"sub_task\": \"Sub Tasks\",\n                    \"tasks\": \"Tasks\",\n                    \"project_id\": \"Project ID\",\n                    \"program_externalId\": \"Program ID\",\n                    \"createdBy\": \"UUID\",\n                    \"project_updated_date\": \"Project Completion Date of the user\",\n                    \"area_of_improvement\": \"Category\",\n                    \"school_name\": \"School Name\",\n                    \"district_name\": \"District\",\n                    \"program_name\": \"Program Name\",\n                    \"channel_slug\": \"channel_slug\",\n                    \"project_goal\": \"Project Objective\",\n                    \"state_name\": \"Declared State\"\n                },\n                \"dateRange\": {\n                    \"interval\": {\n                        \"startDate\": \"2020-12-01\",\n                        \"endDate\": \"2021-06-30\"\n                    },\n                    \"granularity\": \"all\",\n                    \"intervalSlider\": 0\n                },\n                \"metrics\": [\n                    {\n                        \"metric\": \"total_content_plays_on_portal\",\n                        \"label\": \"total_content_plays_on_portal\",\n                        \"druidQuery\": {\n                            \"dataSource\": \"sl_projects\",\n                            \"limitSpec\": {\n                                \"type\": \"default\",\n                                \"limit\": 50000,\n                                \"columns\": [\n                                    {\n                                        \"dimension\": \"COUNT_DISTINCT(project_id)\",\n                                        \"direction\": \"descending\"\n                                    }\n                                ]\n                            },\n                            \"granularity\": \"all\",\n                            \"dimensions\": [\n                                {\n                                    \"fieldName\": \"task_evidence\",\n                                    \"aliasName\": \"Task Evidence\"\n                                },\n                                {\n                                    \"fieldName\": \"project_duration\",\n                                    \"aliasName\": \"Project Duration\"\n                                },\n                                {\n                                    \"type\": \"extraction\",\n                                    \"extractionFn\": [\n                                        {\n                                            \"type\": \"registeredLookup\",\n                                            \"retainMissingValue\": true,\n                                            \"fn\": \"channelSlugLookup\"\n                                        }\n                                    ],\n                                    \"fieldName\": \"channel\",\n                                    \"aliasName\": \"channel_slug\"\n                                },\n                                {\n                                    \"fieldName\": \"area_of_improvement\",\n                                    \"aliasName\": \"Category\"\n                                },\n                                {\n                                    \"fieldName\": \"school_externalId\",\n                                    \"aliasName\": \"School ID\"\n                                },\n                                {\n                                    \"fieldName\": \"school_name\",\n                                    \"aliasName\": \"School Name\"\n                                },\n                                {\n                                    \"fieldName\": \"createdBy\",\n                                    \"aliasName\": \"UUID\"\n                                },\n                                {\n                                    \"fieldName\": \"project_last_sync\",\n                                    \"aliasName\": \"Project Last Synced Date\"\n                                },\n                                {\n                                    \"fieldName\": \"project_updated_date\",\n                                    \"aliasName\": \"Project Completion Date of the user\"\n                                },\n                                {\n                                    \"fieldName\": \"program_name\",\n                                    \"aliasName\": \"Program Name\"\n                                },\n                                {\n                                    \"fieldName\": \"sub_task\",\n                                    \"aliasName\": \"Sub Tasks\"\n                                },\n                                {\n                                    \"fieldName\": \"block_name\",\n                                    \"aliasName\": \"Block\"\n                                },\n                                {\n                                    \"fieldName\": \"project_goal\",\n                                    \"aliasName\": \"Project Objective\"\n                                },\n                                {\n                                    \"fieldName\": \"project_created_date\",\n                                    \"aliasName\": \"Project start date of the user\"\n                                },\n                                {\n                                    \"fieldName\": \"project_title_editable\",\n                                    \"aliasName\": \"Project Title\"\n                                },\n                                {\n                                    \"fieldName\": \"project_id\",\n                                    \"aliasName\": \"Project ID\"\n                                },\n                                {\n                                    \"fieldName\": \"district_name\",\n                                    \"aliasName\": \"District\"\n                                },\n                                {\n                                    \"fieldName\": \"tasks\",\n                                    \"aliasName\": \"Tasks\"\n                                },\n                                {\n                                    \"fieldName\": \"program_externalId\",\n                                    \"aliasName\": \"Program ID\"\n                                },\n                                {\n                                    \"fieldName\": \"designation\",\n                                    \"aliasName\": \"Role\"\n                                },\n                                {\n                                    \"fieldName\": \"user_full_name\",\n                                    \"aliasName\": \"User First Name\"\n                                },\n                                {\n                                    \"fieldName\": \"user_id\",\n                                    \"aliasName\": \"User Name\"\n                                },\n                                {\n                                    \"fieldName\": \"state_name\",\n                                    \"aliasName\": \"Declared State\"\n                                }\n                            ],\n                            \"postAggregations\": [],\n                            \"queryType\": \"groupBy\"\n                        }\n                    }\n                ],\n                \"output\": [\n                    {\n                        \"type\": \"csv\",\n                        \"metrics\": [],\n                        \"dims\": [\n                            \"date\",\n                            \"channel_slug\"\n                        ],\n                        \"fileParameters\": [\n                            \"id\",\n                            \"dims\"\n                        ]\n                    }\n                ],\n                \"queryType\": \"groupBy\"\n            },\n            \"store\": \"azure\",\n            \"container\": \"reports\",\n            \"key\": \"hawk-eye/\"\n        },\n        \"createdBy\": \"User1\",\n        \"description\": \"Project CSV\",\n        \"submittedOn\": 1613994484935,\n        \"status\": \"ACTIVE\",\n        \"status_msg\": \"REPORT SUCCESSFULLY ACTIVATED\",\n        \"reportSchedule\": \"ONCE\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost/api/data/v1/report/jobs/project_csv",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"data",
+						"v1",
+						"report",
+						"jobs",
+						"project_csv"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
