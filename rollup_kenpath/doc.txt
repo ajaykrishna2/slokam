@@ -1,0 +1,5 @@
+SELECT COUNT(maxStatus) as statusCount, maxStatus from (SELECT MAX(status_code) as maxStatus, createdBy, project_id
+FROM project_rollup_jq_final_30_May_12PM GROUP BY createdBy, project_id) GROUP BY maxStatus
+
+
+./bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic local.ml.project < ~/Downloads/sunbirdstaging-ml-projects-submissions.json
